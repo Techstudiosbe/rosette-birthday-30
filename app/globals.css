@@ -1,26 +1,299 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------- *
+ *  Rosette's 30th — scrapbook design system
+ * ---------------------------------------------------------------- */
+@theme {
+  --color-parchment: #fdf4f6;
+  --color-parchment-deep: #f8e5eb;
+  --color-terracotta: #d84b72;
+  --color-gold: #d4a843;
+  --color-coral: #ff85a2;
+  --color-plum: #c2185b;
+  --color-ink: #2a1b1e;
+  --color-cream: #fffafb;
+
+  --font-display: var(--font-special-elite);
+  --font-serif: var(--font-space-mono);
+  --font-hand: var(--font-caveat);
+  --font-body: var(--font-courier);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --paper: #fdf4f6;
+  --paper-deep: #f8e5eb;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-ink);
+  font-family: var(--font-body), Georgia, serif;
+  background-color: var(--color-parchment);
+  min-height: 100dvh;
+  position: relative;
+}
+
+/* Ambient gradient mesh */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: -2;
+  background: 
+    radial-gradient(circle at 50% 50%, rgba(255, 133, 162, 0.15) 0%, transparent 40%), /* coral pink */
+    radial-gradient(circle at 80% 20%, rgba(212, 168, 67, 0.1) 0%, transparent 35%),   /* gold warm */
+    radial-gradient(circle at 20% 80%, rgba(194, 24, 91, 0.08) 0%, transparent 40%),   /* deep magenta */
+    radial-gradient(circle at 80% 80%, rgba(216, 75, 114, 0.1) 0%, transparent 35%);   /* rose pink */
+  filter: blur(80px);
+  animation: ambient-drift 20s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+/* Tactile paper grain */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+@keyframes ambient-drift {
+  0% { transform: rotate(0deg) scale(1) translate(0, 0); }
+  50% { transform: rotate(2deg) scale(1.05) translate(-2%, 2%); }
+  100% { transform: rotate(-2deg) scale(1.1) translate(2%, -2%); }
+}
+
+/* ----- Headings & text helpers ----- */
+.font-display {
+  font-family: var(--font-display), "Courier New", monospace;
+}
+
+.font-serif-d {
+  font-family: var(--font-serif), "Courier New", monospace;
+}
+
+.font-hand {
+  font-family: var(--font-hand), "Comic Sans MS", cursive;
+}
+
+.font-body {
+  font-family: var(--font-body), "Courier New", monospace;
+}
+
+.eyebrow {
+  font-family: var(--font-serif), Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: var(--color-terracotta);
+}
+
+/* ----- Torn-paper card -----
+   The ragged edge lives on ::before (a background-only layer) so the
+   SVG displacement never distorts the card's text/content. */
+.paper-card {
+  position: relative;
+  background: transparent;
+}
+
+.paper-card>* {
+  position: relative;
+  z-index: 1;
+}
+
+.paper-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--color-cream);
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='0.05'/%3E%3C/svg%3E");
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.6) inset,
+    0 10px 24px -12px rgba(60, 40, 20, 0.45);
+  filter: url(#torn-edge);
+}
+
+.paper-card--clean::before {
+  filter: none;
+  border-radius: 3px;
+}
+
+/* ----- Washi tape ----- */
+.washi {
+  position: absolute;
+  width: 96px;
+  height: 28px;
+  background: repeating-linear-gradient(45deg, rgba(212, 168, 67, 0.55) 0 8px, rgba(212, 168, 67, 0.38) 8px 16px);
+  border-left: 1px dashed rgba(255, 255, 255, 0.4);
+  border-right: 1px dashed rgba(255, 255, 255, 0.4);
+  opacity: 0.9;
+  box-shadow: 0 2px 6px rgba(60, 40, 20, 0.18);
+}
+
+.washi--coral {
+  background: repeating-linear-gradient(45deg, rgba(224, 123, 91, 0.6) 0 8px, rgba(224, 123, 91, 0.4) 8px 16px);
+}
+
+.washi--plum {
+  background: repeating-linear-gradient(45deg, rgba(107, 63, 160, 0.5) 0 8px, rgba(107, 63, 160, 0.33) 8px 16px);
+}
+
+/* ----- Polaroid frame ----- */
+.polaroid {
+  background: #fffdf8;
+  padding: 12px 12px 46px;
+  box-shadow: 0 14px 30px -14px rgba(50, 30, 15, 0.55);
+  border-radius: 2px;
+}
+
+.polaroid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ----- Flip card (3D) ----- */
+.flip {
+  perspective: 1300px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(0.34, 1.2, 0.5, 1);
+  transform-style: preserve-3d;
+}
+
+.flip.is-flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+/* ----- Sticker ----- */
+.sticker {
+  filter: drop-shadow(0 6px 8px rgba(50, 30, 15, 0.28));
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@keyframes slow-float {
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+.animate-slow-float {
+  animation: slow-float 2s ease-in-out infinite;
+}
+
+/* ----- Tape pin (small corner) ----- */
+.tape {
+  position: absolute;
+  width: 64px;
+  height: 22px;
+  background: rgba(255, 252, 240, 0.45);
+  box-shadow: 0 1px 4px rgba(60, 40, 20, 0.2);
+  backdrop-filter: blur(1px);
+}
+
+/* ----- Buttons ----- */
+.btn-washi {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.75rem;
+  font-family: var(--font-hand), cursive;
+  font-size: 1.35rem;
+  color: #fffaf0;
+  background: linear-gradient(120deg, var(--color-terracotta), #b8472f);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 18px -8px rgba(155, 58, 45, 0.7);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-washi:hover {
+  transform: translateY(-2px) rotate(-0.6deg);
+  box-shadow: 0 12px 22px -8px rgba(155, 58, 45, 0.75);
+}
+
+.btn-washi:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-washi:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* ----- Form fields on paper ----- */
+.field-paper {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(120, 80, 40, 0.25);
+  border-radius: 3px;
+  padding: 0.7rem 0.85rem;
+  font-family: var(--font-body), serif;
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field-paper:focus {
+  border-color: var(--color-terracotta);
+  box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.25);
+}
+
+/* ----- Reveal helper (GSAP toggles) ----- */
+.will-reveal {
+  opacity: 0;
+}
+
+/* ----- Misc ----- */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner {
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }
