@@ -4,8 +4,8 @@ export const SITE = {
     name: "Rosette",
     occasion: "30th Birthday",
     scripture: {
-        text: "He who began a good work in you will carry it on to completion.",
-        ref: "Philippians 1:6",
+        text: "Celebrating a life marked by God's goodness",
+        ref: "Psalm 34:8",
     },
     welcome: "Thank you for coming to celebrate this special night with me.",
     prayer: "My prayer is we all have the best time celebrating God for His faithfulness in keeping me!",
@@ -33,34 +33,43 @@ export type EventItem = { time: string; title: string; note?: string; sticker: S
 
 export const ITINERARY: EventItem[] = [
     {
-        time: "6:30",
-        title: "Doors open & welcome",
+        time: "6:00 PM",
+        title: "GUEST ARRIVAL",
         note: "Come in, grab a drink, settle in.",
         sticker: "champagne",
     },
     {
-        time: "7:00",
-        title: "Programme begins",
+        time: "7:00 PM",
+        title: "GAMES",
         note: "Praise & thanksgiving to God.",
         sticker: "starYellow",
     },
     {
-        time: "7:45",
-        title: "Dinner is served",
+        time: "8:00 PM",
+        title: "DINNER",
         note: "Eat, laugh, be merry.",
         sticker: "flowerCoral",
     },
-    { time: "8:45", title: "Celebration & dancing", note: "Hit the floor 💃", sticker: "starRed" },
     {
-        time: "9:30",
-        title: "Cake & birthday blessing",
+        time: "8:45 PM",
+        title: "WORSHIP & A WORD",
+        note: "Praise & thanksgiving to God.",
+        sticker: "starRed",
+    },
+    {
+        time: "10:00 PM",
+        title: "CAKE CUTTING",
         note: "Gather round for the cake!",
         sticker: "candles",
     },
     {
-        time: "10:00",
-        title: "Fellowship continues",
-        note: "Stay as long as your heart is glad.",
+        time: "10:15",
+        title: "WORSHIP & DANCE",
+        sticker: "hearts",
+    },
+    {
+        time: "11:00 PM",
+        title: "CLOSING",
         sticker: "hearts",
     },
 ];
@@ -298,13 +307,7 @@ So in my life, in my life be glorified yeah, yeah
 (Be glorified, be glorified)
 So in my life, in my life yeah yeah, oh
 (Be glorified, be glorified)
-You might also like
-FOR THE ROAD
-Davido
-Sorry
-Mohbad
-Doha
-Seyi Vibez
+
 
 You get the glory
 You get the praise
@@ -422,13 +425,8 @@ Yeshua, ah-ah-ah-ah-ah-ah-ah-ah
 Sickness is leaving, leaving, sickness is leaving
 When we call that name, when we call that name
 When you call that name, when you call that name, say it, say it
-You might also like
-Lord Of The Breakthrough
-Israel & New Breed
-We Worship You Today
-Darwin Hobbs
-For Your Name Is Holy
-Paul Wilbur
+
+
 [Chorus 3: Tye Tribbett, Choir & Vocal]
 Yeshua, ah-ah-ah-ah-ah-ah-ah-ah
 To worship You, I live
@@ -459,6 +457,7 @@ Yeshua, ah-ah-ah-ah-ah-ah-ah-ah
 To worship You, I live
 To worship You, I live, I live to worship You
 Let all the other names fade away, till there's only You
+
 [Chorus 5: Tye Tribbett, Choir, Vocal & Vocal 2]
 Yeshua, ah-ah-ah-ah-ah-ah-ah-ah
 To worship You, I live (Our God is greater)
@@ -497,6 +496,7 @@ If you could just raise up a oh
 Oh-oh, oh, oh
 Let's go, y'all
 To worship You, I live (Hey)
+
 [Chorus 6: Tye Tribbett & Choir]
 To worship You, I live (Come on)
 To worship You, I live, I live to worship You
@@ -1089,11 +1089,7 @@ Every other God is an idol
 Who cannot see and cannot hear
 There is One true living God
 There is One true living God
-You might also like
-we can’t be friends (wait for your love)
-Ariana Grande
-Made A Way
-Travis Greene
+
 In Jesus’ Name (Live)
 Darlene Zschech
 [Bridge: Tim Reimherr & Jessica Barron]
@@ -1581,12 +1577,8 @@ Our God is greater, our God is stronger
 God, You are higher than any other
 Our God is healer, awesome in power
 Our God, our God
-See Chris Tomlin Live
-Get tickets as low as $58
-You might also like
-So Long, London
-Taylor Swift
-Praise
+
+
 Elevation Worship
 Say Don’t Go (Taylor’s Version) [From the Vault]
 Taylor Swift
