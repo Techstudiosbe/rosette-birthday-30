@@ -52,7 +52,7 @@ export default function Hero() {
             <Sticker
                 name="pansy"
                 size={120}
-                className="top-28 left-16 sm:left-24 absolute hero-stk"
+                className="hidden sm:block top-28 left-24 absolute hero-stk"
                 data-fx="-70"
             />
             <Sticker
@@ -76,7 +76,7 @@ export default function Hero() {
             <Sticker
                 name="hearts"
                 size={120}
-                className="bottom-24 -left-2 sm:left-4 absolute hero-stk"
+                className="hidden sm:block bottom-24 left-4 absolute hero-stk"
                 data-fx="-80"
                 data-fy="40"
             />
@@ -95,13 +95,13 @@ export default function Hero() {
             <Sticker
                 name="bowRed"
                 size={120}
-                className="-right-2 sm:right-4 bottom-16 absolute hero-stk"
+                className="hidden sm:block right-4 bottom-16 absolute hero-stk"
                 data-fx="80"
                 data-fy="40"
             />
 
             {/* ---- copy ---- */}
-            <div className="z-10 relative flex flex-col items-center mx-auto px-2 pt-24 sm:pt-28 max-w-md text-center hero-copy">
+            <div className="z-10 relative flex flex-col items-center mx-auto px-4 pt-24 pb-40 sm:pt-28 sm:pb-24 max-w-md text-center hero-copy">
                 <p className="eyebrow">Welcome to</p>
                 <h1 className="mt-3 font-display text-[3.4rem] text-ink sm:text-7xl leading-[0.95]">
                     {SITE.name}&rsquo;s
