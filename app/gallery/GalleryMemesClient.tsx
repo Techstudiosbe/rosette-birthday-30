@@ -1,21 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import type { Meme } from "@/lib/content";
+import type { Meme } from "@/content";
 import Lightbox from "@/components/Lightbox";
 
 type Props = { memes: Meme[] };
 
 export default function GalleryMemesClient({ memes }: Props) {
-  const [activeMeme, setActiveMeme] = useState<Meme | null>(null);
+    const [activeMeme, setActiveMeme] = useState<Meme | null>(null);
 
-  // Duplicate the array to create a seamless infinite marquee effect
-  const duplicatedMemes = [...memes, ...memes, ...memes];
+    // Duplicate the array to create a seamless infinite marquee effect
+    const duplicatedMemes = [...memes, ...memes, ...memes];
 
-  return (
-    <>
-      {/* Inline styles for the marquee animation */}
-      <style dangerouslySetInnerHTML={{ __html: `
+    return (
+        <>
+            {/* Inline styles for the marquee animation */}
+            <style
+                dangerouslySetInnerHTML={{
+                    __html: `
         @keyframes marquee {
           0% { transform: translateX(0%); }
           100% { transform: translateX(-33.3333%); }
@@ -26,49 +28,62 @@ export default function GalleryMemesClient({ memes }: Props) {
         .animate-marquee:hover {
           animation-play-state: paused;
         }
-      `}} />
+      `,
+                }}
+            />
 
-      <div className="flex w-max animate-marquee items-center pl-8">
-        {duplicatedMemes.map((meme, i) => {
-          const placeholderBg = `linear-gradient(135deg, hsl(${(i * 45) % 360 + 10}, 40%, 65%), hsl(${(i * 45) % 360 + 30}, 50%, 70%))`;
-          
-          return (
-            <div
-              key={`${meme.id}-${i}`}
-              className="polaroid relative shrink-0 cursor-pointer transition-transform duration-300 hover:z-50 hover:scale-110"
-              onClick={() => setActiveMeme(meme)}
-              style={{
-                width: 220,
-                transform: `rotate(${meme.rotation}deg) translateY(${i % 2 === 0 ? "15px" : "-15px"})`,
-                marginRight: "-2.5rem", // Overlap horizontally
-              }}
-            >
-              <div className="relative h-[220px] w-full overflow-hidden rounded-[2px] bg-ink/5">
-                {meme.src ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={meme.src} alt={meme.title} className="h-full w-full object-cover" />
-                ) : (
-                  <div className="flex h-full w-full items-center justify-center" style={{ background: placeholderBg }}>
-                    <span className="font-display text-6xl text-white/30">?</span>
-                  </div>
-                )}
-              </div>
-              <div className="px-1 pt-3 text-center">
-                <p className="font-hand text-xl leading-none text-ink">{meme.title}</p>
-              </div>
+            <div className="flex items-center pl-8 w-max animate-marquee">
+                {duplicatedMemes.map((meme, i) => {
+                    const placeholderBg = `linear-gradient(135deg, hsl(${((i * 45) % 360) + 10}, 40%, 65%), hsl(${((i * 45) % 360) + 30}, 50%, 70%))`;
+
+                    return (
+                        <div
+                            key={`${meme.id}-${i}`}
+                            className="hover:z-50 relative hover:scale-110 transition-transform duration-300 cursor-pointer polaroid shrink-0"
+                            onClick={() => setActiveMeme(meme)}
+                            style={{
+                                width: 220,
+                                transform: `rotate(${meme.rotation}deg) translateY(${i % 2 === 0 ? "15px" : "-15px"})`,
+                                marginRight: "-2.5rem", // Overlap horizontally
+                            }}
+                        >
+                            <div className="relative bg-ink/5 rounded-[2px] w-full h-[220px] overflow-hidden">
+                                {meme.src ? (
+                                    // eslint-disable-next-line @next/next/no-img-element
+                                    <img
+                                        src={meme.src}
+                                        alt={meme.title}
+                                        className="w-full h-full object-cover"
+                                    />
+                                ) : (
+                                    <div
+                                        className="flex justify-center items-center w-full h-full"
+                                        style={{ background: placeholderBg }}
+                                    >
+                                        <span className="font-display text-white/30 text-6xl">
+                                            ?
+                                        </span>
+                                    </div>
+                                )}
+                            </div>
+                            <div className="px-1 pt-3 text-center">
+                                <p className="font-hand text-ink text-xl leading-none">
+                                    {meme.title}
+                                </p>
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
-          );
-        })}
-      </div>
 
-      {activeMeme && (
-        <Lightbox
-          src={activeMeme.src || ""}
-          alt={activeMeme.title}
-          caption={activeMeme.title}
-          onClose={() => setActiveMeme(null)}
-        />
-      )}
-    </>
-  );
+            {activeMeme && (
+                <Lightbox
+                    src={activeMeme.src || ""}
+                    alt={activeMeme.title}
+                    caption={activeMeme.title}
+                    onClose={() => setActiveMeme(null)}
+                />
+            )}
+        </>
+    );
 }

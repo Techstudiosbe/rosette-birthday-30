@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { sendGuestMessage, type GuestMessage } from "@/lib/resend";
+import { sendGuestMessage, type GuestMessage } from "@/lib/mailer";
 
 export const runtime = "nodejs";
 

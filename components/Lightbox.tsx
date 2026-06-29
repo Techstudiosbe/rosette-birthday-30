@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { gsap } from "gsap";
 
 type LightboxProps = {
@@ -51,7 +52,7 @@ export default function Lightbox({ src, alt, caption, onClose }: LightboxProps) 
     );
   };
 
-  return (
+  return createPortal(
     <div
       ref={overlayRef}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/70 p-4 sm:p-8"
@@ -61,14 +62,14 @@ export default function Lightbox({ src, alt, caption, onClose }: LightboxProps) 
     >
       <div
         className="relative max-h-full max-w-5xl"
-        onClick={(e) => e.stopPropagation()} // Prevent click-through
+        onClick={(e) => e.stopPropagation()}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           ref={imageRef}
           src={src}
           alt={alt}
-          className="max-h-[85vh] w-auto rounded-md shadow-2xl"
+          className="max-h-[85vh] max-w-[90vw] w-auto rounded-md shadow-2xl"
         />
         {caption && (
           <p className="mt-4 text-center font-hand text-2xl text-white drop-shadow-md">
@@ -83,6 +84,7 @@ export default function Lightbox({ src, alt, caption, onClose }: LightboxProps) 
           ✕
         </button>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
