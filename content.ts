@@ -52,7 +52,7 @@ export const ITINERARY: EventItem[] = [
     },
     {
         time: "8:45 PM",
-        title: "WORSHIP & A WORD",
+        title: "WORSHIP & DANCE",
         note: "Don't be shy, get up and shake a leg!",
         sticker: "starRed",
     },
@@ -64,7 +64,7 @@ export const ITINERARY: EventItem[] = [
     },
     {
         time: "10:15",
-        title: "WORSHIP & DANCE",
+        title: "WORSHIP & A WORD",
         note: "Let it all work out",
         sticker: "hearts",
     },
@@ -142,14 +142,6 @@ export const PHOTOS: Photo[] = [
         rotation: -6,
         tone: "#bb7a55",
         src: "/gallery/rosette-at-18.jpg",
-    },
-    {
-        id: "p9",
-        title: "Rosette at 18 ",
-        year: "2014",
-        rotation: -2,
-        tone: "#c4845a",
-        src: "/gallery/IMG_0541.JPG",
     },
     {
         id: "p10",
@@ -249,7 +241,6 @@ export const PHOTOS: Photo[] = [
 // ──────────────────────────────────────────────────────────────────────────────
 export type Meme = {
     id: string;
-    title: string;
     /** Place real images in /public/gallery/memes/ and set path here */
     src?: string;
     rotation: number;
@@ -258,36 +249,33 @@ export type Meme = {
 export const MEMES: Meme[] = [
     {
         id: "m1",
-        title: "When the worship hits",
         rotation: -4,
-        src: "/memes/5aea68ffad44fc40037b4e12132aa1e7.jpg",
+        src: "/memes/business.jpg",
     },
     {
         id: "m2",
-        title: "5 mins away",
         rotation: 6,
-        src: "/memes/RDC afbeelding.jpg",
+        src: "/memes/kwnga.jpg",
     },
     {
         id: "m3",
-        title: "Prayer warrior mode",
         rotation: -3,
-        src: "/memes/Rosette's Bday (2).jpg",
+        src: "/memes/god-is-good.jpg",
     },
     {
         id: "m4",
-        title: "The blueprint",
         rotation: 5,
-        src: "/memes/Meisje.jpg",
+        src: "/memes/Fitness-Quotes-Motivation.jpg",
     },
     {
         id: "m5",
-        title: "Pinterest mood",
         rotation: -6,
-        src: "/memes/a912d0b70cf2dbb744beddafa62c68ee.jpg",
+        src: "/memes/netball.jpg",
     },
-    { id: "m6", title: "Main character energy", rotation: 4 },
-    { id: "m7", title: "That one laugh", rotation: -2 },
+    { id: "m6", rotation: 4, src: "/memes/riri.jpg" },
+    { id: "m7", rotation: -2, src: "/memes/man-utd.jpg" },
+    { id: "m8", rotation: 3, src: "/memes/G.jpg" },
+    { id: "m9", rotation: -5, src: "/memes/prime.jpg" },
 ];
 
 // ──────────────────────────────────────────────────────────────────────────────

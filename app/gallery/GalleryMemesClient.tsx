@@ -52,7 +52,7 @@ export default function GalleryMemesClient({ memes }: Props) {
                                     // eslint-disable-next-line @next/next/no-img-element
                                     <img
                                         src={meme.src}
-                                        alt={meme.title}
+                                        alt=""
                                         className="w-full h-full object-cover"
                                     />
                                 ) : (
@@ -66,11 +66,6 @@ export default function GalleryMemesClient({ memes }: Props) {
                                     </div>
                                 )}
                             </div>
-                            <div className="px-1 pt-3 text-center">
-                                <p className="font-hand text-ink text-xl leading-none">
-                                    {meme.title}
-                                </p>
-                            </div>
                         </div>
                     );
                 })}
@@ -79,8 +74,8 @@ export default function GalleryMemesClient({ memes }: Props) {
             {activeMeme && (
                 <Lightbox
                     src={activeMeme.src || ""}
-                    alt={activeMeme.title}
-                    caption={activeMeme.title}
+                    alt=""
+                    caption=""
                     onClose={() => setActiveMeme(null)}
                 />
             )}

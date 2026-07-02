@@ -47,23 +47,27 @@ export async function POST(req: NextRequest) {
   if (!name || !favourite || !blessing) {
     return NextResponse.json({ error: "Please fill in the required fields." }, { status: 400 });
   }
-  if (name.length > 80 || favourite.length > 1500 || blessing.length > 2000) {
+  const funny = (body.funny ?? "").toString().trim() || undefined;
+  const anything = (body.anything ?? "").toString().trim() || undefined;
+
+  if (name.length > 80 || favourite.length > 1500 || blessing.length > 2000
+      || (funny && funny.length > 1200) || (anything && anything.length > 1200)) {
     return NextResponse.json({ error: "That message is a little too long." }, { status: 400 });
   }
 
-  const message: GuestMessage = {
-    name,
-    favourite,
-    funny: (body.funny ?? "").toString().trim() || undefined,
-    blessing,
-    anything: (body.anything ?? "").toString().trim() || undefined,
-  };
+  const message: GuestMessage = { name, favourite, funny, blessing, anything };
 
+  let sent: boolean;
   try {
-    await sendGuestMessage(message);
+    sent = await sendGuestMessage(message);
   } catch (err) {
     console.error("[messages] send failed:", err);
     return NextResponse.json({ error: "We couldn't send that just now. Please try again." }, { status: 502 });
+  }
+
+  if (!sent) {
+    console.warn("[messages] mailer not configured — submission dropped silently");
+    return NextResponse.json({ error: "Email service not configured." }, { status: 503 });
   }
 
   return NextResponse.json({ ok: true });

@@ -33,6 +33,19 @@ function html(m: GuestMessage) {
   </div>`;
 }
 
+let _transporter: ReturnType<typeof nodemailer.createTransport> | null = null;
+function getTransporter(user: string, pass: string) {
+  if (!_transporter) {
+    _transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
+      auth: { user, pass },
+    });
+  }
+  return _transporter;
+}
+
 /** Sends the guest message to Rosette via Gmail SMTP. Returns false if not configured. */
 export async function sendGuestMessage(m: GuestMessage): Promise<boolean> {
   const user = process.env.GMAIL_USER;
@@ -44,12 +57,7 @@ export async function sendGuestMessage(m: GuestMessage): Promise<boolean> {
     return false;
   }
 
-  const transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
-    auth: { user, pass },
-  });
+  const transporter = getTransporter(user, pass);
 
   await transporter.sendMail({
     from: `"Rosette's 30th" <${user}>`,
