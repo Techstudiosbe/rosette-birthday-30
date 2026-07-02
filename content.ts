@@ -63,7 +63,7 @@ export const ITINERARY: EventItem[] = [
         sticker: "candles",
     },
     {
-        time: "10:15",
+        time: "10:15 PM",
         title: "WORSHIP & A WORD",
         note: "Let it all work out",
         sticker: "hearts",
@@ -686,99 +686,186 @@ You've never lost a battle`,
                 id: "yemi-4",
                 title: "Jireh",
                 artist: "Elevation Worship & Maverick City Music",
-                lyrics: `He is my faithful father
-Calling me out of the dark
-Night cannot whisper away what He said in the light
-He is my firm foundation
-My anchor won't be moved
-Storms may collide but my soul is on fire with His word
-Wind listen to the sound
-The power on my lips
-Jesus has broken the curse
-He has never lost a battle
-Who are you great mountain?
-That you should not bow low?
-Jesus defeated the darkness
-He has never lost a battle
-And He never will, He never will
-And Hе never will, He nеver will
-And He never will, He never will
-And He never will, He never will
-And He never will, He never will
-And He never will, He never will
-And He never will, He never will
-And He never will, He never will
-Our great defender
-Our strong tower
-He has never lost a battle
-He has never lost a battle
-Our great defender
-Our strong tower
-He has never lost a battle
-He has never lost a battle
-Our great defender
-Our strong tower
-He has never lost a battle
-He has never lost a battle
-Wind listen to the sound
-The power on my lips
-Jesus has broken the curse
-He has never lost a battle
-Who are you great mountain?
-Who are you great mountain?
-Who are you great mountain?
-Who are you great mountain?
-Who are you great mountain?
-Who are you great mountain?
-Who are you great mountain?
-Who are you great mountain?
-Who are you great mountain?
-That you should not bow low?
-Jesus defeated the darkness
-He has never lost a battle
-And He never will, He never will
-And He never will, He never will
-And He never will, He never will
-And He never will, He never will
-Our great defender
-Our strong tower
-He has never lost a battle
-He has never lost a battle
-You are my champion
-Giants fall when you stand
-Undefeated
-Every battle You've won
-I am who You say I am
-You crown me with confidence
-I am seated, in the heavenly place
-Undefeated, with the
-One who has conquered it all
-You are my champion
-Giants fall when you stand
-Undefeated
-Every battle You've won
-I am who You say I am
-You crown me with confidence
-I am seated, in the heavenly place
-Undefeated, with the
-One who has conquered it all
-You are my champion
-Giants fall when you stand
-Undefeated
-Every battle You've won
-I am who You say I am
-You crown me with confidence
-I am seated, in the heavenly place
-Undefeated, with the
-One who has conquered it all
-My great defender
-My strong tower
-You've never lost a battle
-You've never lost a battle
-My great defender
-My strong tower
-You've never lost a battle
-You've never lost a battle`,
+                lyrics: `[Verse 1: Chandler Moore]
+I'll never be more loved than I am right now
+Wasn't holding You up
+So, there's nothing I can do to let You down
+It doesn't take a trophy
+To make You proud
+I'll never be more loved than I am right now, oh
+
+[Verse 2: Naomi Raine, Naomi Raine & Chandler Moore]
+Going through a storm, but I won't go down
+I hear Your voice carried
+In the rhythm of the wind to call me out
+You would cross an ocean so I wouldn't drown
+You've never been closer than You are right now
+
+[Chorus: Naomi Raine & Chandler Moore, Chandler Moore]
+Let's sing it out y'all
+You are Jireh, You are enough
+Jireh, You are enough
+And I will be content (Even in it)
+In every circumstance
+(You arе) Jireh, (You are) You are еnough
+
+[Post-Chorus: Naomi Raine & Chandler Moore, Chandler Moore]
+Forever enough, always enough
+More than enough
+Forever enough, always enough
+More than enough
+See Elevation Worship Live
+Get tickets as low as $56
+You might also like
+Is It Over Now? (Taylor’s Version) [From the Vault]
+Taylor Swift
+Now That We Don’t Talk (Taylor’s Version) [From the Vault]
+Taylor Swift
+Sensational
+Chris Brown
+[Verse 3: Chandler Moore, Chandler Moore & Naomi Raine]
+I don't wanna forget how I feel right now
+On the mountaintop
+I can see so clear what it's all about
+So stay by my side when the sun goes down
+Don't wanna forget how I feel right now
+
+[Chorus: Naomi Raine & (Chandler Moore)]
+(Jireh) Jireh, (You are) You are enough
+(I know that You are) Jireh, (You are) You are enough
+(So I will be) I will be content
+(Even in this right now) In every circumstance
+('Cause I learned that) Jireh, (He is always enough) You are enough
+
+[Post-Chorus: Chandler Moore, Chandler Moore & Naomi Raine]
+He's forever enough, always enough
+Oh, He's more than enough
+He is, sing: He is
+Forever enough (When I lose everything)
+Always enough (He's always)
+More than enough (Yeah)
+
+[Bridge 1: Naomi Raine, (Chandler Moore)]
+Mm, I'm already loved
+I'm already chosen
+I know who I am
+I know what You've spoken
+I'm already loved
+More than I could imagine
+And that is enough, oh
+I'm already loved (I'm already loved)
+I'm already chosen (I'm already chosen)
+I know who I am (I know who I am)
+I know what You've spoken (I know what You've spoken)
+I'm already loved (I'm already loved)
+More than I could imagine (More than I could imagine)
+That is enough (That is enough)
+It's enough for me, oh
+I'm already loved (I'm already loved)
+I'm already chosen (I'm already chosen)
+I know who I am (I know who I am)
+I know, I know what You've spoken (I know what You've Spoken)
+I'm already loved (I'm already loved)
+More than I could even fathom (More than I could imagine)
+And that is enough (And that is enough)
+Yes it is
+Yes, He knows
+Yes, He knows
+[Refrain 1: Chandler Moore, (Naomi Raine)]
+And that is enough (That is enough)
+What His truth says is better than anything
+That is enough (That is enough)
+What He's declared over us, it's true
+That is enough (That is enough)
+That is enough (That is enough)
+That is enough (That is enough)
+Jehovah, You are (That is enough)
+El Shaddai, You are (That is enough)
+When I have You, I have everything (That is enough)
+When I have Jesus, I have everything (That is enough)
+That is enough (That is enough)
+'Cause You are enough (You are enough)
+You're my portion (You are enough)
+You're my portion (You are enough)
+More than enough for me (You are enough)
+Sing: "You are enough for me" (You are enough)
+So I am enough (So I am enough)
+You are enough (You are enough)
+So I am enough (So I am enough)
+
+[Chorus: Naomi Raine, (Chandler Moore)]
+(Sing: "Jireh") Jireh, You are enough
+(Jireh) Jireh, (You are) You are enough
+(I'm learning now) That I will be content
+(Whatever my lot) In every circumstance
+(Jesus wins) Jireh, (You are) You are enough
+[Bridge 2: Naomi Raine, (Chandler Moore)]
+If He dresses the lilies
+With beauty and splendor
+How much more will He clothe you
+How much more will He clothe you
+If He watches over
+Every sparrow
+How much more does He love you
+How much more does He love you
+If He dresses the lilies
+With beauty and splendor (With beauty and splendor)
+How much more will He clothe you (How much more will He clothe you)
+How much more will He clothe you (How much more will He clothe you)
+If He watches over (If He watches over)
+Every sparrow (Every sparrow)
+How much more does He love you (How much more does He love you)
+How much more does He love you (How much more does He love you)
+Oh, if He dresses the lilies (If He dresses the lilies)
+Oh, with beauty and splendor (With beauty and splendor)
+How much more will He clothe you (How much more will He clothe you)
+Our God is provider (How much more will He clothe you)
+So don't you worry (If He watches over)
+No, don't you worry (Every sparrow)
+I'm falling in Love's love (How much more does He love you)
+I'm falling in Love's love (How much more does He love you)
+How much more (How much more does He love you)
+How much more (How much more does He love you)
+How much more (How much more does He love you)
+Our Father loves you (How much more does He love you)
+How much more does He love you (How much more does He love you)
+
+[Refrain 2: Chandler Moore & Naomi Raine]
+It's more than you ask, think or imagine (Yeah)
+According to His power working in us
+It's more than enough
+It's more than you ask, think or imagine, oh yeah
+According to His power working in us (How much more does He love us)
+It's more than enough
+Let's go, y'all, say: (How much more)
+It's more than you ask, think or imagine
+(It's all according) According to His power, it's working in us
+(How much more does He love you) It's more than enough
+How much more, say:
+More than you ask, think or imagine
+(It's all according) According to His power
+(Not according to your goodness but) Working in us
+(How much more) It's more than enough (One more time, more than you ask)
+More than you ask, think or imagine
+(All according) According to His power
+(Working in us) Working in us
+(How much more does He love You) It's more than enough
+More than enough (It's more than enough)
+How much more (More than enough)
+All according
+More than enough (It's more than enough)
+More than you know (More than you know)
+Oh
+
+[Chorus: Chandler Moore & Naomi Raine]
+Jireh, You are enough (Oh, yes, You are, yeah, You are)
+Jireh, You are enough (You've always been enough)
+And I will be content
+(Even in this) In every circumstance
+(Jireh) Jireh, You are enough
+And I will be content
+In every circumstance
+'Cause Jireh, You are enough`,
             },
         ],
     },
